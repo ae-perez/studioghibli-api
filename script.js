@@ -1,17 +1,21 @@
 const app = document.getElementById('root');
 //console.log(app); // will output: <div id="root"></div>
 
-//create the logo and the container the logo will be in
-const logo_div = document.createElement('div');
-logo_div.setAttribute('class', 'logo-div')
+//create the logo
 const logo = document.createElement('img');
 logo.setAttribute('class', 'logo');
 logo.src = 'https://github.com/taniarascia/sandbox/blob/master/ghibli/logo.png?raw=true';
+
+const geometrix = document.createElement('svg');
+const circle = document.createElement('circle');
+
+geometrix.appendChild(circle);
+app.appendChild(geometrix);
+
+//create the container the cards will be in
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
-//append logo
-app.appendChild(logo_div);
 app.appendChild(logo);
 app.appendChild(container);
 
@@ -54,6 +58,9 @@ request.onload = function () {
         console.log('error');
     }
 }
+
+
+
 
 //send request
 request.send()
