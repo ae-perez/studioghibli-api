@@ -6,10 +6,8 @@ const logo = document.createElement('img');
 logo.setAttribute('class', 'logo');
 logo.src = 'https://github.com/taniarascia/sandbox/blob/master/ghibli/logo.png?raw=true';
 
-const geometrix = document.createElement('svg');
-const circle = document.createElement('circle');
-
-geometrix.appendChild(circle);
+const geometrix = document.createElement('div');
+geometrix.setAttribute('class', 'logo-circle');
 app.appendChild(geometrix);
 
 //create the container the cards will be in
@@ -38,6 +36,9 @@ request.onload = function () {
             //create a div with a card class
             const card = document.createElement('div');
             card.setAttribute('class', 'card');
+            //--- this works 
+            card.addEventListener("click", Hello);
+            //--- this works
 
             //create an H1 and set the text content to film's title
             const h1 = document.createElement('h1');
@@ -59,10 +60,10 @@ request.onload = function () {
     }
 }
 
-
-
-
 //send request
 request.send()
 
-console.log(document.offSetwidth);
+
+function Hello () {
+    console.log("HELLO GHIBLI LOVER");
+}
